@@ -81,7 +81,7 @@ void main(){
 	int read_col=3200;
 	double incor_data[3200][10000/50];
 	double result[10000/50][3200];
-	#pragma omp parallel for
+	//#pragma omp parallel for
 	for(int b=0;b<traces/10000;b++){
 
 
