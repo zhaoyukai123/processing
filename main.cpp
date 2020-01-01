@@ -71,12 +71,12 @@ void ifft(complex *in,complex *out,complex *dummy,int n){
 	ifft_driver(out, dummy, n, 1);
 }
 void main(){
-	double *a = NULL;//声明一个指向a的char*类型的指针
+	double *a = NULL;
 	int n=1000000000;
 	int top,bottom,middle;
 	int error=0;
 	while (error==0){
-    a = (double*)malloc( n * sizeof(double)*13076);//使用malloc分配内存的首地址。然后赋值给a
+    a = (double*)malloc( n * sizeof(double)*13076);
     if (!a){
 		free(a);
 		top=n;
@@ -85,7 +85,7 @@ void main(){
     }
 	while(error==0){
 		middle=top/2-bottom/2;
-		a = (double*)malloc( middle* sizeof(double));//使用malloc分配内存的首地址。然后赋值给a
+		a = (double*)malloc( middle* sizeof(double));
     if (!a){
 		free(a);
 		top=middle;
