@@ -1,19 +1,10 @@
 #include "stdlib.h"
-void incor(double cor_data[][200],double in[][1000]){
-	double temp[1000][3200];
-	for (int i=0;i<1000;i++){
-		for (int j=0;j<3200;j++){
-			temp[i][j]=in[j][i];
-	}
-	for(int i=0;i<2000;i++){
+void incor(double *cor_data,double *in,double *temp2,double *temp3,int n){
+	tran(in,0,0,n/10,3200,temp2);
+	for(int i=0;i<n/50;i++){
 		for(int j=0;j<3200;j++){
-			temp[i*10][j]=(temp[i*10][j]+temp[i*10+1][j]+temp[i*10+2][j]+temp[i*10+3][j]+temp[i*10+4][j])/5;
+			cor_data[i*3200+j]=(temp2[i*5+j]+temp2[i*5+1+j]+temp2[i*5+2+j]+temp2[i*5+3+j]+temp2[i*5+4+j])/5;
 		}
 	}
-	for (int i=0;i<200;i++){
-		for (int j=0;j<3200;j++){
-			cor_data[j][i]=temp[i][j];
-		}
-	}
-}
+	tran(cor_data,0,0,n/50,3200,temp3);
 }
