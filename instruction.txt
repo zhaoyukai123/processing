@@ -1,0 +1,1 @@
+Run the code as windows server 2008 r2 with visual studio 6.0.For OpenMP parallised code, changing the variable OMP_NUM_THREADS will control how many CPU's are used for the calcualtion.
