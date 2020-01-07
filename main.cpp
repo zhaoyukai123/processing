@@ -83,10 +83,11 @@ void main(){
 		n/=2;
 		bottom=n;
     }
+}
 	while(error==0){
 		middle=top/2-bottom/2;
-		a = (double*)malloc( middle* sizeof(double));
-    if (!a){
+		a = (double*)malloc( n*middle* sizeof(double));
+   	 if (!a){
 		free(a);
 		top=middle;
 		}
@@ -99,9 +100,11 @@ void main(){
 		n=middle;
 		error=1;
 	}
-	}
+
 }
+	n=n/100000;
 	n=n-n%50;
+	if(n>traces)n=traces-traces%50;
 	int data_col=3200;
 	FILE *bxds;
 	bxds = fopen("d:/position/bxds","rb");
