@@ -16,5 +16,4 @@ void tran(double *a,int x0,int y0,int x1,int y1,double *temp){
 			}
 		}
 	}
-	a=temp;
 }
