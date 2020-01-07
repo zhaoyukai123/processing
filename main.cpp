@@ -83,11 +83,12 @@ void main(){
 		n/=2;
 		bottom=n;
     }
+	else error=1;
 }
-	while(error==0){
-		middle=top/2-bottom/2;
-		a = (double*)malloc( n*middle* sizeof(double));
-   	 if (!a){
+	while(error==1){
+		middle=top/2+bottom/2;
+		a = (double*)malloc( middle* sizeof(double)*13076);
+    if (!a){
 		free(a);
 		top=middle;
 		}
@@ -98,7 +99,7 @@ void main(){
 	else{
 		free(a);
 		n=middle;
-		error=1;
+		error=0;
 	}
 
 }
